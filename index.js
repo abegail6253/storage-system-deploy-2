@@ -36,8 +36,8 @@ app.get('/storage', (req, res) => {
 // MySQL connection
 const pool = mysql.createPool({
   host: 'localhost',
-  user: 'root',
-  password: 'developer',  // Replace with your MySQL password
+  user: 'stechadmin',
+  password: '!Stsvc24a',  // Replace with your MySQL password
   database: 'dtr_db',  // Replace with your database name
 });
 
