@@ -35,10 +35,10 @@ app.get('/storage', (req, res) => {
 
 // MySQL connection
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'stechadmin',
-  password: '!Stsvc24a',  // Replace with your MySQL password
-  database: 'dtr_db',  // Replace with your database name
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 pool.query('SELECT 1', (err, results) => {
