@@ -24,6 +24,10 @@ app.use(cors({
 
 // Body parser middleware
 app.use(express.json());
+// Add this route to your Express app
+app.get('/storage', (req, res) => {
+  res.send('Storage route is working!');
+});
 
 
 
@@ -35,6 +39,14 @@ const pool = mysql.createPool({
   user: 'root',
   password: 'developer',  // Replace with your MySQL password
   database: 'dtr_db',  // Replace with your database name
+});
+
+pool.query('SELECT 1', (err, results) => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err);
+  } else {
+    console.log('Connection successful, results:', results);
+  }
 });
 
 const promisePool = pool.promise();
