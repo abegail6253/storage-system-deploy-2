@@ -28,6 +28,12 @@ app.use(express.json());
 app.get('/storage', (req, res) => {
   res.send('Storage route is working!');
 });
+app.use('/storagesystem', express.static(path.join(__dirname, './public/storage-system')));
+
+app.get('/storagesystem/*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/storage-system/index.html'));
+});
+
 
 
 
