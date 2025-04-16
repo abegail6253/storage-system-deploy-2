@@ -18,7 +18,7 @@ const port = 3001;
 // Enable CORS for all routes
 
 app.use(cors({
-  origin: ['http://localhost:4200', 'https://stech.wheba-services.net/', , 'https://stech.wheba-services.net/storagesystem/'],  
+  origin: ['http://localhost:4200', 'https://stech.wheba-services.net/', 'https://stech.wheba-services.net/storagesystem/'],  
   methods: ['GET', 'POST', 'DELETE', 'PUT'],  
   allowedHeaders: ['Content-Type', 'Authorization'],  
 }));
