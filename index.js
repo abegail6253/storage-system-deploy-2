@@ -17,10 +17,9 @@ const port = 3001;
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'https://stech.wheba-services.net' : 'http://localhost:4200',
-  methods: ['GET', 'POST', 'DELETE', 'PUT'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
+  origin: ['http://localhost:4200', 'https://stech.wheba-services.net/'],  // Use an array for multiple origins
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],  
+  allowedHeaders: ['Content-Type', 'Authorization'],  
 }));
 
 
