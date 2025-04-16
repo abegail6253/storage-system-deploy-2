@@ -17,10 +17,12 @@ const port = 3001;
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: 'http://localhost:4200',  
-  methods: ['GET', 'POST', 'DELETE', 'PUT'],  
-  allowedHeaders: ['Content-Type', 'Authorization'],  
+  origin: process.env.NODE_ENV === 'production' ? 'https://stech.wheba-services.net' : 'http://localhost:4200',
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }));
+
 
 // Body parser middleware
 app.use(express.json());
